@@ -8,8 +8,8 @@
 
 #
 ## Globals
-data_dir <- "../../Data/"
-output_dir <- "../Output/"
+data_dir <- "../../../Data/"
+output_dir <- "Output/"
 
 load.libraries <- function(libraries_needed) {
   for(library_needed in libraries_needed)
@@ -244,11 +244,5 @@ for(i in 1:6) {
     res = merge(res, makeSpecificNVendors(year, i), by='EquipmentType', all = TRUE)
   write.xlsx(res, outfile, sheetName=paste0(i, ' vendor', if(i>1)'s'else''), row.names=FALSE, showNA=FALSE, append=TRUE)
 }
-
-makeFigure2Respondents(year_list)
-
-print(makeFigure3Respondents(2012))
-
-print(makeFigure4Respondents(2012))
 
 message('MOHEV program execution completed.\n')
